@@ -10,7 +10,7 @@ resource "aws_s3_bucket_notification" "lambda_trigger" {
   }
   depends_on = [aws_lambda_permission.s3_permission_to_trigger_lambda]
 }
-#Step 6.1: Permissions for lambda to be invoked form s3
+#Step 6.1: Permissions for lambda to be invoked from s3
 resource "aws_lambda_permission" "s3_permission_to_trigger_lambda" {
   statement_id  = "AllowExecutionFromS3Bucket"
   action        = "lambda:InvokeFunction"
